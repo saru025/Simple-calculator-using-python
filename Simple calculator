@@ -1,0 +1,41 @@
+from tkinter import *
+window = Tk()
+window.title("calculator")
+window.config(padx=30,pady=30)
+def add():
+    Num1=float(first_number.get())
+    Num2=float(second_number.get())
+    result=Num1+Num2
+    answer.config(text=f"{result}")
+ def sub():
+    Num1=float(first_number.get())
+    Num2=float(second_number.get())
+    result=Num1-Num2
+    answer.config(text=f"{result}")
+def multiply():
+    Num1=float(first_number.get())
+    Num2=float(second_number.get())
+    result=Num1*Num2
+    answer.config(text=f"{result}")
+def div():
+    Num1=float(first_number.get())
+    Num2=float(second_number.get())
+    result=Num1%Num2
+    answer.config(text=f"{result}")
+type_number=Label(text="Type Number")
+type_number.grid(column=2,row=3)
+first_number=Entry()
+first_number.grid(column=2,row=6)
+second_number=Entry()
+second_number.grid(column=2,row=9)
+answer=Label(text="0")
+answer.grid(column=2,row=11)	
+calculate=Button(text="add",command=add)
+calculate.grid(column=1,row=12)
+calculate=Button(text="sub",command=sub)
+calculate.grid(column=2,row=12)
+calculate=Button(text="multiply",command=multiply)
+calculate.grid(column=1,row=13)
+calculate=Button(text="div",command=div)
+calculate.grid(column=2,row=13)
+window.mainloop()
